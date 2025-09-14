@@ -89,31 +89,32 @@
     border: 1px solid var(--glass-border-strong);
   }
 
-  /* Interactive hover effects */
+  /* Interactive hover effects - Smoother transitions */
   .hover-lift {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.6s cubic-bezier(0.2, 0, 0.1, 1);
   }
 
   .hover-lift:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.08), 0 4px 15px rgba(255, 255, 255, 0.06);
   }
 
   .hover-glow {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.8s cubic-bezier(0.2, 0, 0.1, 1);
+    box-shadow: 0 0 0px rgba(255, 255, 255, 0);
   }
 
   .hover-glow:hover {
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.12), 0 0 40px rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
   .hover-scale {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.5s cubic-bezier(0.2, 0, 0.1, 1);
   }
 
   .hover-scale:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
   }
 
   /* Navigation glass effect */
@@ -274,20 +275,28 @@
 
 @keyframes gradientShift {
   0%, 100% {
-    background: linear-gradient(45deg, 
-      hsl(0, 0%, 0%) 0%, 
-      hsl(0, 0%, 2%) 25%, 
-      hsl(0, 0%, 1%) 50%, 
-      hsl(0, 0%, 3%) 75%, 
-      hsl(0, 0%, 0%) 100%);
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(255, 255, 255, 0.025) 0%, transparent 50%),
+      linear-gradient(135deg, 
+        hsl(0, 0%, 0%) 0%, 
+        hsl(0, 0%, 1%) 25%, 
+        hsl(0, 0%, 0%) 50%, 
+        hsl(0, 0%, 2%) 75%, 
+        hsl(0, 0%, 0%) 100%);
   }
   50% {
-    background: linear-gradient(45deg, 
-      hsl(0, 0%, 1%) 0%, 
-      hsl(0, 0%, 3%) 25%, 
-      hsl(0, 0%, 0%) 50%, 
-      hsl(0, 0%, 2%) 75%, 
-      hsl(0, 0%, 1%) 100%);
+    background: 
+      radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+      radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.025) 0%, transparent 50%),
+      linear-gradient(135deg, 
+        hsl(0, 0%, 1%) 0%, 
+        hsl(0, 0%, 0%) 25%, 
+        hsl(0, 0%, 2%) 50%, 
+        hsl(0, 0%, 0%) 75%, 
+        hsl(0, 0%, 1%) 100%);
   }
 }
 
@@ -310,10 +319,12 @@
 
 @keyframes glowPulse {
   0%, 100% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.1);
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
   }
   50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.2);
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.25));
   }
 }
 
