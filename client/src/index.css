@@ -54,6 +54,36 @@
   --border: hsl(0, 0%, 15%);
   --input: hsl(0, 0%, 15%);
   --ring: hsl(0, 0%, 20%);
+  --glass: hsla(0, 0%, 100%, 0.05);
+  --glass-border: hsla(0, 0%, 100%, 0.1);
+  --glass-strong: hsla(0, 0%, 100%, 0.08);
+  --glass-border-strong: hsla(0, 0%, 100%, 0.15);
+}
+
+.light {
+  --background: hsl(0, 0%, 98%);
+  --foreground: hsl(0, 0%, 5%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(0, 0%, 5%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 5%);
+  --primary: hsl(0, 0%, 0%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 95%);
+  --secondary-foreground: hsl(0, 0%, 5%);
+  --muted: hsl(0, 0%, 92%);
+  --muted-foreground: hsl(0, 0%, 35%);
+  --accent: hsl(0, 0%, 90%);
+  --accent-foreground: hsl(0, 0%, 5%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(0, 0%, 95%);
+  --border: hsl(0, 0%, 85%);
+  --input: hsl(0, 0%, 85%);
+  --ring: hsl(0, 0%, 80%);
+  --glass: hsla(0, 0%, 0%, 0.03);
+  --glass-border: hsla(0, 0%, 0%, 0.08);
+  --glass-strong: hsla(0, 0%, 0%, 0.05);
+  --glass-border-strong: hsla(0, 0%, 0%, 0.12);
 }
 
 @layer base {
@@ -117,12 +147,71 @@
     transform: scale(1.03);
   }
 
+  /* 3D Hover Effects */
+  .hover-3d {
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.6s ease;
+    transform-style: preserve-3d;
+  }
+
+  .hover-3d:hover {
+    transform: perspective(1000px) rotateX(10deg) rotateY(-10deg) translateZ(20px);
+    box-shadow: 
+      0 25px 50px rgba(255, 255, 255, 0.1),
+      0 12px 25px rgba(255, 255, 255, 0.08),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+
+  .hover-3d-card {
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+  }
+
+  .hover-3d-card:hover {
+    transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateZ(30px);
+    box-shadow: 
+      0 35px 60px rgba(255, 255, 255, 0.12),
+      0 15px 30px rgba(255, 255, 255, 0.1);
+  }
+
+  .hover-3d-flip {
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+  }
+
+  .hover-3d-flip:hover {
+    transform: perspective(1000px) rotateY(15deg) rotateX(5deg) translateZ(10px);
+  }
+
+  /* Button 3D effects */
+  .btn-3d {
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  .btn-3d:hover {
+    transform: perspective(1000px) rotateX(-10deg) rotateY(5deg) translateZ(10px);
+    box-shadow: 
+      0 20px 40px rgba(255, 255, 255, 0.15),
+      0 10px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-3d:active {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(2deg) translateZ(5px);
+    transition: all 0.1s ease;
+  }
+
   /* Navigation glass effect */
   .nav-glass {
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
+  }
+
+  /* Light theme navigation */
+  .light .nav-glass {
+    background: rgba(255, 255, 255, 0.9);
   }
 }
 

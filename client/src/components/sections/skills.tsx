@@ -35,7 +35,7 @@ export default function Skills() {
           {skills.map((skill, index) => (
             <div
               key={skill.name}
-              className="glass-strong rounded-xl p-6 text-center hover-glow hover-scale animate-scale-in"
+              className="glass-strong rounded-xl p-6 text-center hover-3d animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
               data-testid={`skill-${skill.name.toLowerCase().replace('/', '-').replace(' ', '-')}`}
             >

@@ -68,7 +68,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <div
               key={project.id}
-              className="glass-strong rounded-2xl overflow-hidden hover-lift hover-glow group animate-scale-in"
+              className="glass-strong rounded-2xl overflow-hidden hover-3d-card group animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
               data-testid={`project-card-${project.id}`}
             >
