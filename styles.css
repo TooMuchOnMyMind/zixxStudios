@@ -3,28 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 :root {
-    --primary-bg: #0a0a0a;
-    --secondary-bg: #1a1a1a;
+    --primary-bg: #0a0a0a; /* almost black */
+    --secondary-bg: #1a1a1a; /* dark gray */
     --glass-bg: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(255, 255, 255, 0.12);
     --glass-hover: rgba(255, 255, 255, 0.15);
 
-    --accent-primary: #ffffff;
-    --accent-secondary: #aaaaaa;
+    /* Accents */
+    --accent-primary: #ffffff; /* white highlight */
+    --accent-secondary: #cccccc; /* softer gray */
 
-    --text-primary: #ffffff;
-    --text-secondary: #e5e7eb;
-    --text-muted: #9ca3af;
+    /* Text colors (fixed for readability) */
+    --text-primary: #ffffff; /* main text stays white */
+    --text-secondary: #e5e5e5; /* lighter gray for subtext */
+    --text-muted: #9ca3af; /* muted gray */
 
-    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* Shadows */
+    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
 
-    --gradient-primary: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    /* Gradients (clean black & white look) */
+    --gradient-primary: linear-gradient(135deg, #000000 0%, #444444 100%);
+    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
+
 
 
 body {
