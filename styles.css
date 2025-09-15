@@ -10,17 +10,22 @@
     --glass-bg: rgba(255, 255, 255, 0.08);
     --glass-border: rgba(255, 255, 255, 0.12);
     --glass-hover: rgba(255, 255, 255, 0.15);
+
     --accent-primary: #ffffff;
-    --accent-secondary: #8b5cf6;
+    --accent-secondary: #aaaaaa;
+
     --text-primary: #ffffff;
     --text-secondary: #e5e7eb;
     --text-muted: #9ca3af;
+
     --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+
+    --gradient-primary: linear-gradient(135deg, #000000 0%, #444444 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
+
 
 body {
     font-family: 'Inter', sans-serif;
