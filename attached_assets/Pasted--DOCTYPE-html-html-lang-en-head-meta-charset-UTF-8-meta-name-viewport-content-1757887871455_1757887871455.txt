@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zixx - Roblox Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+         :root {
+             --primary-bg: #000000;
+             --secondary-bg: #111111;
+             --accent-white: #FFFFFF;
+             --accent-gray: #E0E0E0;
+             --text-white: #FFFFFF;
+             --text-gray: #CCCCCC;
+             --text-light: #F0F0F0;
+             --gradient: linear-gradient(135deg, #FFFFFF 0%, #E0E0E0 100%);
+             --gradient-dark: linear-gradient(135deg, #111111 0%, #000000 100%);
+             --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+             --shadow-hover: 0 8px 30px rgba(255, 255, 255, 0.1);
+             --border: rgba(255, 255, 255, 0.1);
+             --glow: 0 0 20px rgba(255, 255, 255, 0.3);
+             --glow-strong: 0 0 30px rgba(255, 255, 255, 0.6);
+             --text-glow: 0 0 10px rgba(255, 255, 255, 0.5);
+             --text-glow-strong: 0 0 20px rgba(255, 255, 255, 0.8);
+         }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--primary-bg);
+            color: var(--text-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+         .navbar {
+             position: fixed;
+             top: 0;
+             width: 100%;
+             background: rgba(0, 0, 0, 0.95);
+             backdrop-filter: blur(10px);
+             z-index: 1000;
+             padding: 1rem 0;
+             transition: all 0.3s ease;
+             border-bottom: 1px solid var(--border);
+         }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+         .logo {
+             font-family: 'Poppins', sans-serif;
+             font-size: 1.5rem;
+             font-weight: 700;
+             color: var(--accent-white);
+             text-shadow: var(--text-glow);
+             animation: logoShimmer 3s ease-in-out infinite;
+         }
+
+         @keyframes logoShimmer {
+             0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+             50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.3); }
+         }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+         .nav-links a {
+             color: var(--text-white);
+             text-decoration: none;
+             font-weight: 500;
+             transition: all 0.3s ease;
+             position: relative;
+             text-shadow: var(--text-glow);
+         }
+
+         .nav-links a:hover {
+             color: var(--accent-white);
+             text-shadow: var(--text-glow-strong);
+         }
+
+         .nav-links a::after {
+             content: '';
+             position: absolute;
+             bottom: -5px;
+             left: 0;
+             width: 0;
+             height: 2px;
+             background: var(--accent-white);
+             box-shadow: var(--glow);
+             transition: width 0.3s ease;
+         }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+         .hero {
+             height: 100vh;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             text-align: center;
+             position: relative;
+             background: var(--primary-bg);
+             overflow: hidden;
+         }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+         .particle {
+             position: absolute;
+             width: 4px;
+             height: 4px;
+             background: var(--accent-white);
+             border-radius: 50%;
+             opacity: 0.8;
+             box-shadow: var(--glow);
+             animation: float 6s infinite ease-in-out;
+         }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+         .hero h1 {
+             font-family: 'Poppins', sans-serif;
+             font-size: 4rem;
+             font-weight: 700;
+             margin-bottom: 1rem;
+             background: var(--gradient);
+             -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent;
+             background-clip: text;
+             animation: fadeInUp 1s ease-out, titleShine 4s ease-in-out infinite;
+             text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+         }
+
+         @keyframes titleShine {
+             0%, 100% { 
+                 filter: brightness(1) drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+                 text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+             }
+             50% { 
+                 filter: brightness(1.2) drop-shadow(0 0 40px rgba(255, 255, 255, 0.6));
+                 text-shadow: 0 0 50px rgba(255, 255, 255, 0.8), 0 0 70px rgba(255, 255, 255, 0.4);
+             }
+         }
+
+         .hero .subtitle {
+             font-size: 1.5rem;
+             color: var(--text-light);
+             margin-bottom: 2rem;
+             animation: fadeInUp 1s ease-out 0.2s both, subtitleGlow 3s ease-in-out infinite;
+             text-shadow: var(--text-glow);
+         }
+
+         @keyframes subtitleGlow {
+             0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+             50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.2); }
+         }
+
+         .cta-button {
+             display: inline-block;
+             padding: 1rem 2rem;
+             background: var(--gradient);
+             color: var(--primary-bg);
+             text-decoration: none;
+             border-radius: 50px;
+             font-weight: 600;
+             font-size: 1.1rem;
+             transition: all 0.3s ease;
+             animation: fadeInUp 1s ease-out 0.4s both, buttonShine 2s ease-in-out infinite;
+             position: relative;
+             overflow: hidden;
+             box-shadow: var(--glow);
+         }
+
+         @keyframes buttonShine {
+             0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+             50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.2); }
+         }
+
+         .cta-button:hover {
+             transform: translateY(-3px);
+             box-shadow: var(--glow-strong);
+         }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+         .section-title {
+             font-family: 'Poppins', sans-serif;
+             font-size: 3rem;
+             font-weight: 700;
+             text-align: center;
+             margin-bottom: 3rem;
+             color: var(--text-white);
+             position: relative;
+             text-shadow: var(--text-glow);
+             animation: sectionTitleShine 3s ease-in-out infinite;
+         }
+
+         @keyframes sectionTitleShine {
+             0%, 100% { 
+                 text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+                 filter: brightness(1);
+             }
+             50% { 
+                 text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.3);
+                 filter: brightness(1.1);
+             }
+         }
+
+         .section-title::after {
+             content: '';
+             position: absolute;
+             bottom: -10px;
+             left: 50%;
+             transform: translateX(-50%);
+             width: 80px;
+             height: 4px;
+             background: var(--gradient);
+             border-radius: 2px;
+             box-shadow: var(--glow);
+             animation: underlineShine 2s ease-in-out infinite;
+         }
+
+         @keyframes underlineShine {
+             0%, 100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+             50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.2); }
+         }
+
+        /* About Section */
+         .about {
+             background: var(--secondary-bg);
+         }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+         .about-text {
+             font-size: 1.2rem;
+             color: var(--text-light);
+             line-height: 1.8;
+             text-shadow: var(--text-glow);
+         }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .avatar {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--text-white);
+            margin: 0 auto;
+            animation: pulse 2s infinite;
+        }
+
+         @keyframes pulse {
+             0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+             70% { box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
+             100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+         }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+         .project-card {
+             background: var(--secondary-bg);
+             border-radius: 15px;
+             overflow: hidden;
+             transition: all 0.3s ease;
+             position: relative;
+             transform-style: preserve-3d;
+             border: 1px solid var(--border);
+             box-shadow: var(--shadow);
+         }
+
+         .project-card:hover {
+             transform: translateY(-10px) rotateX(5deg);
+             box-shadow: var(--glow-strong);
+         }
+
+        .project-image {
+            height: 200px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--text-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+         .project-title {
+             font-family: 'Poppins', sans-serif;
+             font-size: 1.5rem;
+             font-weight: 600;
+             margin-bottom: 1rem;
+             color: var(--text-white);
+             text-shadow: var(--text-glow);
+         }
+
+         .project-description {
+             color: var(--text-light);
+             margin-bottom: 1.5rem;
+             line-height: 1.6;
+             text-shadow: var(--text-glow);
+         }
+
+         .project-button {
+             display: inline-block;
+             padding: 0.8rem 1.5rem;
+             background: transparent;
+             color: var(--accent-white);
+             border: 2px solid var(--accent-white);
+             text-decoration: none;
+             border-radius: 25px;
+             font-weight: 500;
+             transition: all 0.3s ease;
+             box-shadow: var(--glow);
+         }
+
+         .project-button:hover {
+             background: var(--accent-white);
+             color: var(--primary-bg);
+             transform: translateY(-2px);
+             box-shadow: var(--glow-strong);
+         }
+
+        /* Skills Section */
+         .skills {
+             background: var(--secondary-bg);
+         }
+
+         .skills-grid {
+             display: grid;
+             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+             gap: 2rem;
+             margin-top: 3rem;
+             max-width: 800px;
+             margin-left: auto;
+             margin-right: auto;
+         }
+
+         .skill-item {
+             text-align: center;
+             padding: 2rem 1rem;
+             background: var(--primary-bg);
+             border-radius: 15px;
+             transition: all 0.3s ease;
+             border: 2px solid transparent;
+             box-shadow: var(--shadow);
+         }
+
+         .skill-item:hover {
+             border-color: var(--accent-white);
+             transform: translateY(-5px);
+             box-shadow: var(--glow);
+         }
+
+         .skill-icon {
+             font-size: 3rem;
+             color: var(--accent-white);
+             margin-bottom: 1rem;
+             transition: all 0.3s ease;
+             text-shadow: var(--text-glow);
+         }
+
+         .skill-item:hover .skill-icon {
+             transform: scale(1.1);
+             text-shadow: var(--text-glow-strong);
+         }
+
+        .skill-name {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--text-white);
+            text-shadow: var(--text-glow);
+        }
+
+        /* Contact Section */
+         .contact-form {
+             max-width: 600px;
+             margin: 0 auto;
+             background: var(--secondary-bg);
+             padding: 3rem;
+             border-radius: 20px;
+             box-shadow: var(--shadow);
+             border: 1px solid var(--border);
+         }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+         .form-group label {
+             display: block;
+             margin-bottom: 0.5rem;
+             color: var(--text-white);
+             font-weight: 500;
+             text-shadow: var(--text-glow);
+         }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-bg);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            color: var(--text-white);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+         .form-group input:focus,
+         .form-group textarea:focus {
+             outline: none;
+             border-color: var(--accent-white);
+             box-shadow: var(--glow);
+         }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+         .submit-button {
+             width: 100%;
+             padding: 1rem;
+             background: var(--gradient);
+             color: var(--primary-bg);
+             border: none;
+             border-radius: 10px;
+             font-size: 1.1rem;
+             font-weight: 600;
+             cursor: pointer;
+             transition: all 0.3s ease;
+             box-shadow: var(--glow);
+         }
+
+         .submit-button:hover {
+             transform: translateY(-2px);
+             box-shadow: var(--glow-strong);
+         }
+
+        /* Footer */
+         .footer {
+             background: var(--secondary-bg);
+             padding: 3rem 0 2rem;
+             text-align: center;
+         }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+         .footer-links a:hover {
+             color: var(--accent-white);
+             text-shadow: var(--text-glow);
+         }
+
+        .footer-text {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .avatar {
+                width: 200px;
+                height: 200px;
+                font-size: 3rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+             .skills-grid {
+                 grid-template-columns: repeat(2, 1fr);
+                 max-width: 400px;
+             }
+
+            .contact-form {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Loading animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+         .spinner {
+             width: 50px;
+             height: 50px;
+             border: 3px solid rgba(255, 255, 255, 0.3);
+             border-top: 3px solid var(--accent-white);
+             border-radius: 50%;
+             animation: spin 1s linear infinite;
+             box-shadow: var(--glow);
+         }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Zixx</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1>Hi, I'm Zixx</h1>
+            <p class="subtitle">Roblox Developer | Lua Scripting Specialist | Game Systems Designer</p>
+            <a href="#projects" class="cta-button">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <h2 class="section-title fade-in">About Me</h2>
+        <div class="about-content">
+            <div class="about-text fade-in">
+                <p>I'm Zixx, a passionate Roblox developer who creates immersive, playable experiences. With over 2 years of experience in Lua scripting, game design, and optimization, I bring ideas to life in ways that keep players engaged and coming back.</p>
+                <br>
+                <p>My expertise spans from complex game mechanics and data management to UI/UX design and performance optimization. I love turning creative concepts into polished, engaging games that players can't put down.</p>
+            </div>
+            <div class="about-image fade-in">
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2 class="section-title fade-in">My Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Brainrot Survival Simulator</h3>
+                    <p class="project-description">Developed a fully dynamic enemy system and point collection system in Roblox using Lua. Increased player retention by 25% through engaging gameplay mechanics.</p>
+                    <a href="#" class="project-button">Play Now</a>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Space Adventure RPG</h3>
+                    <p class="project-description">Created an immersive RPG with custom inventory systems, quest mechanics, and procedurally generated worlds. Features advanced Lua scripting and data persistence.</p>
+                    <a href="#" class="project-button">View Code</a>
+                </div>
+            </div>
+            <div class="project-card fade-in">
+                <div class="project-image">
+                    <i class="fas fa-tower-broadcast"></i>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Tower Defense Master</h3>
+                    <p class="project-description">Built a strategic tower defense game with 15+ unique towers, wave-based progression, and real-time multiplayer support. Optimized for smooth performance.</p>
+                    <a href="#" class="project-button">Play Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills">
+        <h2 class="section-title fade-in">Skills & Technologies</h2>
+        <div class="skills-grid">
+            <div class="skill-item fade-in">
+                <div class="skill-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <div class="skill-name">Roblox Studio</div>
+            </div>
+            <div class="skill-item fade-in">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="skill-name">OOP</div>
+            </div>
+            <div class="skill-item fade-in">
+                <div class="skill-icon">
+                    <i class="fab fa-js-square"></i>
+                </div>
+                <div class="skill-name">JavaScript</div>
+            </div>
+            <div class="skill-item fade-in">
+                <div class="skill-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <div class="skill-name">HTML</div>
+            </div>
+            <div class="skill-item fade-in">
+                <div class="skill-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <div class="skill-name">CSS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title fade-in">Let's Build Something Awesome</h2>
+        <div class="contact-form fade-in">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="discord">Discord Username</label>
+                    <input type="text" id="discord" name="discord" placeholder="username#1234" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-text">
+            © 2025 Zixx. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loading').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Particle animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Navbar background on scroll
+        function handleNavbarScroll() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(30, 30, 47, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(30, 30, 47, 0.95)';
+            }
+        }
+
+         // Discord webhook URL - Replace with your Discord webhook URL
+         const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1416871258234159267/L3XbLP5qDAkoRU_XyLiae9-SQai_fKPbytKBXl54vgoqtmIrlmZsmlCfQcDSmNHco-yL';
+
+         // Contact form handling
+         document.getElementById('contactForm').addEventListener('submit', function(e) {
+             e.preventDefault();
+             
+             // Get form data
+             const formData = new FormData(this);
+             const name = formData.get('name');
+             const discord = formData.get('discord');
+             const message = formData.get('message');
+             
+             // Simple validation
+             if (!name || !discord || !message) {
+                 alert('Please fill in all fields.');
+                 return;
+             }
+             
+             const submitButton = this.querySelector('.submit-button');
+             const originalText = submitButton.textContent;
+             submitButton.textContent = 'Sending...';
+             submitButton.disabled = true;
+             
+             // Create Discord embed message
+             const discordMessage = {
+                 embeds: [{
+                     title: "🎮 New Portfolio Contact",
+                     color: 0x4FC3F7, // Electric blue color
+                     fields: [
+                         {
+                             name: "👤 Name",
+                             value: name,
+                             inline: true
+                         },
+                         {
+                             name: "💬 Discord",
+                             value: discord,
+                             inline: true
+                         },
+                         {
+                             name: "📝 Message",
+                             value: message,
+                             inline: false
+                         }
+                     ],
+                     timestamp: new Date().toISOString(),
+                     footer: {
+                         text: "Portfolio Contact Form"
+                     }
+                 }]
+             };
+             
+             // Send to Discord webhook
+             fetch(DISCORD_WEBHOOK_URL, {
+                 method: 'POST',
+                 headers: {
+                     'Content-Type': 'application/json',
+                 },
+                 body: JSON.stringify(discordMessage)
+             })
+             .then(response => {
+                 if (response.ok) {
+                     alert('Thank you for your message! I\'ll get back to you soon on Discord.');
+                     document.getElementById('contactForm').reset();
+                 } else {
+                     throw new Error('Failed to send message');
+                 }
+             })
+             .catch(error => {
+                 alert('Sorry, there was an error sending your message. Please try again or contact me directly on Discord.');
+                 console.error('Error:', error);
+             })
+             .finally(() => {
+                 submitButton.textContent = originalText;
+                 submitButton.disabled = false;
+             });
+         });
+
+        // Mouse following effect for buttons
+        document.querySelectorAll('.cta-button, .project-button, .submit-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        function handleParallax() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const rate = scrolled * -0.5;
+            hero.style.transform = `translateY(${rate}px)`;
+        }
+
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            handleScrollAnimations();
+            handleNavbarScroll();
+        });
+
+        // Event listeners
+        window.addEventListener('scroll', () => {
+            handleScrollAnimations();
+            handleNavbarScroll();
+            handleParallax();
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) rotateX(8deg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotateX(0deg)';
+            });
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize typing effect after page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const heroTitle = document.querySelector('.hero h1');
+                const originalText = heroTitle.textContent;
+                typeWriter(heroTitle, originalText, 150);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
