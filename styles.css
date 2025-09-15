@@ -22,7 +22,7 @@
     --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
-    --gradient-primary: linear-gradient(135deg, #000000 0%, #ffffff 100%);
+    --gradient-primary: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
     --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
 }
 
@@ -44,7 +44,7 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
@@ -254,12 +254,12 @@ html {
     animation: fadeInUp 1s ease-out 0.4s both;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.4);
 }
 
 .cta-button::before {
@@ -371,21 +371,21 @@ html {
     font-size: 4rem;
     color: white;
     margin: 0 auto;
-    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
     }
 
     70% {
-        box-shadow: 0 20px 60px rgba(99, 102, 241, 0.5);
+        box-shadow: 0 20px 60px rgba(255, 255, 255, 0.5);
     }
 
     100% {
-        box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+        box-shadow: 0 20px 40px rgba(255, 255, 255, 0.3);
     }
 }
 
@@ -460,7 +460,7 @@ html {
     background: var(--accent-primary);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
 
 /* Skills Section */
@@ -556,7 +556,7 @@ html {
     outline: none;
     border-color: var(--accent-primary);
     background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
 .form-group textarea {
@@ -575,12 +575,12 @@ html {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
 
 .submit-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.4);
 }
 
 /* Footer */
@@ -721,7 +721,7 @@ html {
 .spinner {
     width: 50px;
     height: 50px;
-    border: 3px solid rgba(99, 102, 241, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.3);
     border-top: 3px solid var(--accent-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
