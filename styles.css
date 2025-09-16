@@ -130,7 +130,7 @@ html {
 .nav-links a.active {
     color: var(--text-primary);
     background: var(--gradient-primary);
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Mobile menu toggle */
