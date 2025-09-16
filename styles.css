@@ -453,7 +453,7 @@ html {
 
 .project-button:hover {
     background: var(--accent-primary);
-    color: rgb(0, 0, 0);
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
 }
