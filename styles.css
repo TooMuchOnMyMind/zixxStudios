@@ -578,7 +578,7 @@ html {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
 }
 
 .submit-button:hover {
