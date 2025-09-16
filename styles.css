@@ -22,7 +22,7 @@
     --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
     --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
 
-    --gradient-primary: linear-gradient(135deg, #333333 0%, #111111 100%);
+    --gradient-primary: radial-gradient(135deg, #ffffff 0%, #111111 100%);
     --gradient-glass: linear-gradient(
         135deg,
         rgb(255, 255, 255) 0%,
