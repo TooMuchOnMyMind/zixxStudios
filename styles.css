@@ -5,21 +5,29 @@
 }
 
 :root {
-    --primary-bg: #0a0a0a;
-    --secondary-bg: #1a1a1a;
-    --glass-bg: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-hover: rgba(255, 255, 255, 0.15);
-    --accent-primary: #ffffff;
-    --accent-secondary: #8b5cf6;
+    --primary-bg: #000000;
+    --secondary-bg: #0a0a0a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-hover: rgba(255, 255, 255, 0.12);
+
+    --accent-primary: #ffffff; /* White accents */
+    --accent-secondary: #aaaaaa; /* Subtle grey highlight */
+
     --text-primary: #ffffff;
-    --text-secondary: #e5e7eb;
-    --text-muted: #9ca3af;
-    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    --text-secondary: #cccccc;
+    --text-muted: #888888;
+
+    --shadow-light: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
+    --shadow-heavy: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+
+    --gradient-primary: linear-gradient(135deg, #333333 0%, #111111 100%);
+    --gradient-glass: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0.02) 100%
+    );
 }
 
 body {
@@ -39,8 +47,8 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
 }
@@ -249,7 +257,7 @@ html {
     animation: fadeInUp 1s ease-out 0.4s both;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
 
 .cta-button:hover {
